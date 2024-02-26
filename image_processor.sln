@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService", "ImageService\ImageService.csproj", "{82A2CF02-AD80-44A3-A1F2-BAB936BB1CE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService.Tests", "ImageService.Tests\ImageService.Tests.csproj", "{5805FB54-7DAE-46C8-83EF-EF60EEE2949D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService.App", "ImageService.App\ImageService.App.csproj", "{F96B3A01-B52D-4E7D-AF33-EB067A5F5033}"
 EndProject
 Global
@@ -22,10 +20,6 @@ Global
 		{82A2CF02-AD80-44A3-A1F2-BAB936BB1CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A2CF02-AD80-44A3-A1F2-BAB936BB1CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A2CF02-AD80-44A3-A1F2-BAB936BB1CE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5805FB54-7DAE-46C8-83EF-EF60EEE2949D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5805FB54-7DAE-46C8-83EF-EF60EEE2949D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5805FB54-7DAE-46C8-83EF-EF60EEE2949D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5805FB54-7DAE-46C8-83EF-EF60EEE2949D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F96B3A01-B52D-4E7D-AF33-EB067A5F5033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F96B3A01-B52D-4E7D-AF33-EB067A5F5033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F96B3A01-B52D-4E7D-AF33-EB067A5F5033}.Release|Any CPU.ActiveCfg = Release|Any CPU

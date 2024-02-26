@@ -2,7 +2,7 @@
 
 public class Program
 {
-    private static List<string> imageEncodingExtensions = new List<string>()
+    private static List<string> _imageEncodingExtensions = new List<string>()
     {
         ".jpeg",
         ".jpg",
@@ -58,7 +58,7 @@ public class Program
     {
         foreach (FileInfo file in inputDir.GetFiles())
         {
-            if (!imageEncodingExtensions.Contains(file.Extension)) continue;
+            if (!_imageEncodingExtensions.Contains(file.Extension)) continue;
             Console.WriteLine($"Processing {file.Name}");
             
             switch (operation)

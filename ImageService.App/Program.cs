@@ -50,7 +50,6 @@ public class Program
         }
     }
     
-    // TODO: consider using enum for operations
     private static void ProcessAllImagesInDirectory(DirectoryInfo inputDir, string operation, int argument)
     {
         foreach (FileInfo file in inputDir.GetFiles())

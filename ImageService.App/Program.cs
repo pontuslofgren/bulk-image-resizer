@@ -11,8 +11,10 @@ public class Program
 
     static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to ImageResizer");
-        Console.WriteLine("Please provide a path to a directory containing images: ");
+        Console.WriteLine("""
+                          Welcome to ImageResizer 😊
+                          Please provide a path to a directory containing images:
+                          """);
 
         DirectoryInfo? inputDir;
         do
@@ -20,10 +22,12 @@ public class Program
             Console.Write("> ");
             inputDir = new DirectoryInfo(Console.ReadLine()!);
         } while (!inputDir.Exists);
-        
-        Console.WriteLine("What would you like to do?");
-        Console.WriteLine("Press [1] to resize image with a max pixel width");
-        Console.WriteLine("Press [2] to resize image with a scale");
+
+        Console.WriteLine("""
+                          What would you like to do?
+                          - Press [1] to resize image with a max pixel width
+                          - Press [2] to resize image with a scale
+                          """);
 
         string? userCommand;
         do

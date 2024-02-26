@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using SixLabors.ImageSharp;
+﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
 
 namespace ImageService;

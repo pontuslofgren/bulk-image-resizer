@@ -35,5 +35,11 @@ public static class ResizeImage
 
         image.Save($"output/resized_{file.Name}");
     }
+
+    public static void ConvertImageFormatToWebp(FileInfo file)
+    {
+        Image image = Image.Load(file.FullName);
+        image.SaveAsWebp($"output/{Path.GetFileNameWithoutExtension(file.FullName)}.webp");
+    }
 }
     

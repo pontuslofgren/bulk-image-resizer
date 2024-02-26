@@ -27,6 +27,7 @@ public class Program
                           What would you like to do?
                           - Press [1] to resize image with a max pixel width
                           - Press [2] to resize image with a scale
+                          - Press [3] convert image format to .webp
                           """);
 
         string? userCommand;
@@ -34,7 +35,7 @@ public class Program
         {
             Console.Write("> ");
             userCommand = Console.ReadLine();
-        } while (!new string[] {"1", "2"}.Contains(userCommand));
+        } while (!new string[] {"1", "2", "3"}.Contains(userCommand));
 
         switch (userCommand)
         {
@@ -51,10 +52,13 @@ public class Program
                 Console.WriteLine($"Scale: {scale}");
                 ProcessAllImagesInDirectory(inputDir, "ResizeWithScale", scale);
                 break;
+            case "3":
+                ProcessAllImagesInDirectory(inputDir, "ConvertImageFormatToWebp");
+                break;
         }
     }
     
-    private static void ProcessAllImagesInDirectory(DirectoryInfo inputDir, string operation, int argument)
+    private static void ProcessAllImagesInDirectory(DirectoryInfo inputDir, string operation, int argument = 0)
     {
         foreach (FileInfo file in inputDir.GetFiles())
         {
@@ -68,6 +72,9 @@ public class Program
                     break;
                 case "ResizeWithScale":
                     ResizeImage.ResizeWithScale(argument, file);
+                    break;
+                case "ConvertImageFormatToWebp":
+                    ResizeImage.ConvertImageFormatToWebp(file);
                     break;
             }
         }

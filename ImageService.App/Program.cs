@@ -11,18 +11,26 @@ public class Program
 
     static void Main(string[] args)
     {
-        // TODO: wrap in loop. Validate that filepath exists.
         Console.WriteLine("Welcome to ImageResizer");
         Console.WriteLine("Please provide a path to a directory containing images: ");
-        Console.Write("> ");
-        var inputDir = new DirectoryInfo(Console.ReadLine());
 
-        // TODO: wrap in loop. Validate correct input. Add exit.
+        DirectoryInfo inputDir;
+        do
+        {
+            Console.Write("> ");
+            inputDir = new DirectoryInfo(Console.ReadLine());
+        } while (!inputDir.Exists);
+        
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("Press [1] to resize image with a max pixel width");
         Console.WriteLine("Press [2] to resize image with a scale");
-        Console.Write("> ");
-        string userCommand = Console.ReadLine();
+
+        string userCommand;
+        do
+        {
+            Console.Write("> ");
+            userCommand = Console.ReadLine();
+        } while (!new string[] {"1", "2"}.Contains(userCommand));
 
         switch (userCommand)
         {
@@ -35,7 +43,9 @@ public class Program
             case "2":
                 Console.WriteLine("What is the scale?");
                 Console.Write("> ");
-                int scale = int.Parse(Console.ReadLine());
+                int scale = (int) (double.Parse(Console.ReadLine()) * 100);
+                Console.WriteLine($"Scale: {scale}");
+                ProcessAllImagesInDirectory(inputDir, "ResizeWithScale", scale);
                 break;
         }
     }
@@ -53,7 +63,7 @@ public class Program
                 case "ResizeToMaxPixelWidth":
                     ResizeImage.ResizeToMaxPixelWidth(argument, file);
                     break;
-                case "ResizeWithScale"
+                case "ResizeWithScale":
                     ResizeImage.ResizeWithScale(argument, file);
                     break;
             }
